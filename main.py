@@ -125,9 +125,14 @@ class Assistant:
                 }}
         ]
 
+        print(html_content)
+
         messages = [
             {"role": "system",
-             "content": "You are reading extracted HTML data from a website. Try to find information about the expert on that page, about their name, affiliation, location, summary and socials."},
+             "content": "You are reading extracted HTML data from a website. "
+                        "Try to find information about the expert on that page, about their name, "
+                        "affiliation, location, summary and socials. If you can't find their name directly, "
+                        "try to extract it from the text or email or possible links"},
             {"role": "user", "content": html_content}
         ]
 
@@ -139,6 +144,7 @@ class Assistant:
         )
 
         response_message = response["choices"][0]["message"]
+        print(response_message)
         if response_message.get("function_call"):
             function_args = json.loads(response_message["function_call"]["arguments"])
             return ExpertInformation(

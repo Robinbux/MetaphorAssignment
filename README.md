@@ -6,8 +6,8 @@ Not only does it generate a tailored search query, but it also extracts and pres
 expert, including their website, location, and social profiles.
 
 Because of the given time constraint and the fact that I first needed to learn how to use the API well,
-I decided to make this a command-line application. However, the core idea can be extended to a
-web application quite easily
+I decided to make this a command-line application or a simple Streamlit frontend. However, the core idea can be extended to a
+web application quite easily.
 
 ## Idea
 
@@ -28,10 +28,16 @@ Python 3.10 or above
 A .env file with the necessary API keys for Metaphor and OpenAI.
 
 ### Running the Application
+#### Terminal
 From the root directory of the project, run:
 ```python
 python main.py
 ```
 Follow the on-screen prompts to generate expert search results.
 
+#### Streamlit
+From the root directory of the project, run:
+```python
+streamlit run app.py
+```
 
